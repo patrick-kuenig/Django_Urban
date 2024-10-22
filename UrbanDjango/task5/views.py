@@ -57,7 +57,7 @@ def sign_up_by_django(request):
             elif password != repeat_password:
                 info['error'] = 'Пароли не совпадают'
 
-            elif age < 18:
+            elif int(age) < 18:
                 info['error'] = 'Вы должны быть старше 18'
 
             elif username in users:
