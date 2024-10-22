@@ -50,7 +50,7 @@ def sign_up_by_django(request):
             age = form.cleaned_data['age']
             context['form'] = form
 
-            if password == repeat_password and age >= 18 and username not in users:
+            if password == repeat_password and int(age) >= 18 and username not in users:
                 users.append(username)
                 return HttpResponse(f"Приветствуем, {username}")
 
