@@ -44,10 +44,10 @@ def sign_up_by_django(request):
     if request.method == 'POST':
         form = UserRegister(request.POST)
         if form.is_valid():
-            username = form.cleaned_data('username')
-            password = form.cleaned_data('password')
-            repeat_password = form.cleaned_data('repeat_password')
-            age = form.cleaned_data('age')
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            repeat_password = form.cleaned_data['repeat_password']
+            age = form.cleaned_data['age']
             context['form'] = form
 
             if password == repeat_password and age >= 18 and username not in users:
